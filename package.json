@@ -1,32 +1,35 @@
 {
   "name": "nodejsbackend",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "description": "backend for self-taught backend",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/server.js"
+    "start": "nodemon --exec babel-node src/server.mjs"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "fullstack",
     "nodejs",
     "express",
     "cangnduc"
   ],
- 
   "author": "Cangnduc",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.30.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.4",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.21.4",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0"
   }
 }
