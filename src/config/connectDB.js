@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize('nodebae','root','',{
+const sequelize = new Sequelize('mydatabase','root','',{
     host: 'localhost',
     dialect: 'mysql',
     logging: false,
