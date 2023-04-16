@@ -1,14 +1,21 @@
-import { DataTypes, Sequelize } from "sequelize";
-const sequelize = new Sequelize("nodebae",'root','',{
+const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
+
+
+const sequelize = new Sequelize("myDatabase",'root','',{
     host: 'localhost',
     dialect: 'mysql',
     define: {
         freezeTableName: true,
     }
 });
-createTable("User");
+const queryInterface = sequelize.getQueryInterface();
+
+queryInterface.addColumn('users', 'password', { type: DataTypes.STRING,
+    allowNull: false });
+//createTable("User");
 async function createTable(name) {
-    const User = sequelize.define(name,{  
+    const User = await sequelize.define(name,{  
         userID : {
             type: Sequelize.INTEGER,
             primaryKey: true,

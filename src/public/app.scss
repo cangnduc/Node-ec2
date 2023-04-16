@@ -2,3 +2,10 @@
     margin: 0;
     padding: 0;
 }
+$color_red : rgba(235, 249, 255, 0.543);
+body {
+    background-color:$color_red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
