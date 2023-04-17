@@ -1,15 +1,10 @@
 import db from "../models/index";
-import createUserForm from "../crudServices/hassPassword";
+import createUserForm from "../crudServices/createUser";
+import loadUser from "../crudServices/loadUser";
 import multer from "multer";
 let upload = multer().single("uploaded_file");
 let getHomePage = async (req, res) => {
-  let data;
-  try {
-    data = await db.Users.findAll();
-    //console.log(data[0]['dataValues'])
-  } catch (error) {
-    console.log(error);
-  }
+  let data = await loadUser();
   return res.render("homePage.ejs", { data: data });
 };
 let adduser = (req, res) => {

@@ -15,7 +15,7 @@ let createUser = async (data, fileName) => {
   return new Promise(async (resolve, reject) => {
     let hash = await hassPassword(data.password);
     try {
-      await db.Users.create({
+      await db.users.create({
         firstName: data.firstName,
         email: data.email,
         password: hash,
